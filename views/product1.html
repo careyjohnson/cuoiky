@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title>NguyenThanhMai</title>
     <!-- Animate on scroll  -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -105,7 +105,7 @@
                   </div>
                   <ul class="nav_list">
                     <li class="nav_item">
-                      <a href="#" class="nav_link">PRODUCT 1</a>
+                      <a href="/product1" class="nav_link">PRODUCT 1</a>
                     </li>
                     <li class="nav_item">
                       <a href="#" class="nav_link">PRODUCT 2</a>
@@ -152,42 +152,157 @@
     </div>
     <!-- header ends -->
 
-    <!-- product detail starts -->
-
-    <section class="detail">
-      <span  >
-        <img class="product-image" src="<%= product.img_url %>" alt="p1" />
-      </span>
-      <span class="product-desc" >
-        <h2><%= name %></h2>
-        <p id="p1">Id - <%= product.product_id %></p>
-        <p>$<%= product.list_price %></p>
-        <p><%= product.description %></p>
-      </span>
+    <!-- banner section starts -->
+    <section class="banner_section banner_black">
+      <div class="container">
+        <div class="row">
+          <% product.forEach((product1, index) => { %>
+          <div class="col-lg-4 col-md-6">
+            <div class="single_banner">
+              <div class="banner_thumb">
+                <a href="/detail/<%= product1.product_id %>"
+                  ><img src="<%= product1.img_url %>" alt="p1"
+                /></a>
+                <h3><%= product1.product_name %></h3>
+                <p>$<%= product1.list_price %></p>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          <!-- <div class="col-lg-4 col-md-6">
+            <div class="single_banner">
+              <div class="banner_thumb">
+                <a href="/detail/2"
+                  ><img src="<%= product.img_url %>" alt="p2"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single_banner">
+              <div class="banner_thumb">
+                <a href="/detail/3"
+                  ><img src="<%= product.img_url %>" alt="p3"
+                /></a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
     </section>
-    <!-- product detail ends -->
-    <p><a  class="edit" href="/detail/edit/<%= product.product_id %>">Edit</a></p>
-      
-      <script async>
-        // navigation
-        const navOpen = document.querySelector(".nav_hamburger");
-        const navClose = document.querySelector(".close_toggle");
-        const menu = document.querySelector(".nav_menu");
-        const navContainer = document.querySelector(".nav_menu");
+    <!-- banner section ends -->
+    <p><a href="/product1/add">Add</a></p>
 
-        navOpen.addEventListener("click", () => {
-          menu.classList.add("open");
-          document.body.classList.add("active");
-          navContainer.style.left = "0";
-          navContainer.style.width = "17rem";
-        });
-        navClose.addEventListener("click", () => {
-          menu.classList.remove("open");
-          document.body.classList.remove("active");
-          navContainer.style.removeProperty("left");
-          navContainer.style.removeProperty("width");
-        });
-      </script>
-    </p>
+    <!-- footer starts -->
+    <footer class="text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/carey.johnson.18041/"
+            role="button"
+            ><i class="ion-social-facebook"></i
+          ></a>
+
+          <!-- Youtube -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#https://www.youtube.com/channel/UCajl9ArY14d6He_N5vgNlCA"
+            role="button"
+            ><i class="ion-social-youtube"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#https://www.instagram.com/iammai121/"
+            role="button"
+            ><i class="ion-social-instagram"></i
+          ></a>
+
+          <!-- Shopee -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#https://shopee.vn/user/account/profile"
+            role="button"
+            ><i class="ion-bag"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2" style="font-size: 16px">
+                  <strong>Đăng ký nhận tin</strong>
+                </p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div class="form-outline form-white mb-4">
+                  <input
+                    required
+                    type="email"
+                    id="form5Example2"
+                    placeholder="abc@gmail.com"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Xác nhận
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        Tên sinh viên: Nguyễn Thanh Mai | Mã sinh viên: 11183233
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- footer ends  -->
+
+    <script async>
+      // navigation
+      const navOpen = document.querySelector(".nav_hamburger");
+      const navClose = document.querySelector(".close_toggle");
+      const menu = document.querySelector(".nav_menu");
+      const navContainer = document.querySelector(".nav_menu");
+
+      navOpen.addEventListener("click", () => {
+        menu.classList.add("open");
+        document.body.classList.add("active");
+        navContainer.style.left = "0";
+        navContainer.style.width = "17rem";
+      });
+      navClose.addEventListener("click", () => {
+        menu.classList.remove("open");
+        document.body.classList.remove("active");
+        navContainer.style.removeProperty("left");
+        navContainer.style.removeProperty("width");
+      });
+    </script>
   </body>
 </html>

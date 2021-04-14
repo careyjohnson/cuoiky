@@ -12,10 +12,12 @@ const {
   editProduct,
   editProductSubmit,
 } = require("./routes/detail");
+const { showProduct1, addProduct } = require("./routes/product1");
 app.get("/detail/:id", showProduct);
 app.get("/detail/edit/:id", editProduct);
 app.post("/detail/edit/:id", editProductSubmit);
-
+app.get("/product1", showProduct1);
+app.get("/product1/add", addProduct);
 // template engine
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");

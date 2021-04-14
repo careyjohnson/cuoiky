@@ -407,6 +407,12 @@ ul {
 .banner_thumb img {
   transition: 0.3s;
   /* height: 200px; */
+  width: 80%;
+  margin-bottom: 30px;
+}
+.banner_thumb {
+  text-align: center;
+  margin-bottom: 50px;
 }
 .banner_thumb:hover::before {
   opacity: 1;
@@ -420,6 +426,7 @@ ul {
   width: 25%;
   float: left;
   margin: 100px 20px 20px 100px;
+  display: inline;
 }
 
 .product-desc {
@@ -434,7 +441,10 @@ td {
   border-collapse: collapse;
   padding: 5px;
 }
-
+.edit {
+  border: 1px solid var(--backColor2);
+  padding: 10px 20px;
+}
 /* ------------footer------------ */
 footer {
   font-size: 14px;
